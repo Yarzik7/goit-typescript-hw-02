@@ -16,8 +16,8 @@ enum WeekendDays {
   Sunday = "Sunday",
 }
 
-function isWeekend(day: Workweek | WeekendDays): day is WeekendDays {
+type Day = Workweek | WeekendDays;
+
+function isWeekend(day: Day): day is WeekendDays {
   return day in WeekendDays;
 }
-
-console.log(isWeekend(WeekendDays.Saturday));
